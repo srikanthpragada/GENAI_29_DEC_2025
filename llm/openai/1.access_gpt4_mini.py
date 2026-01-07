@@ -7,7 +7,6 @@ from openai import OpenAI
 client = OpenAI()   # api_key = key 
 
 response = client.responses.create(
-    #model="gpt-4o-mini", 
     model = "gpt-4o-mini",
     input="What is the capital of Spain?"
 )

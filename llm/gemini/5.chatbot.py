@@ -4,7 +4,8 @@ from langchain.chat_models import init_chat_model
 
 model = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
 
-messages = []
+system_message = {"role" : "system" , "content" : "Give short answers"}
+messages = [system_message]
 
 while True:
     prompt = input("Enter prompt [q to quit, c to create new chat] :")
@@ -12,7 +13,7 @@ while True:
         break 
 
     if prompt.lower() == 'c':
-        messages = []
+        messages = [system_message]
         continue 
         
     messages.append( {"role" : "user", "content" : prompt})  # HumanMessage

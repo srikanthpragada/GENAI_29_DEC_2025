@@ -6,4 +6,4 @@ model = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
 response = model.stream("Which are 5 best cities in Spain")
 
 for chunk in response:
-    print(chunk.content, end = "\n-------------\n")
+    print(chunk.content, end = "\n-------------\n", flush = True)
