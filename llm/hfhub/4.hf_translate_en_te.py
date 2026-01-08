@@ -6,7 +6,7 @@ client = InferenceClient(model=model_id,
                          provider="hf-inference", 
                          token= keys.HUGGINGFACE_KEY)
 
-english_text = "What do you know about AI?"
+english_text = "What do you know about AI today?"
 
 response = client.translation(english_text, 
                              src_lang="en_XX",   # Source language (English)

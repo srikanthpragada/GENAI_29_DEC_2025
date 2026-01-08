@@ -7,7 +7,7 @@ asr = pipeline("automatic-speech-recognition",
 # Path to your audio file (.wav or .mp3)
 audio_path = "./pipelines/mlk_clip.mp3"   
 
-# Transcribe the audio
+# Transcribe the audio - convert mp3 to text 
 result = asr(audio_path, 
              return_timestamps = True, 
              generate_kwargs={"language": "en"})
@@ -15,11 +15,10 @@ result = asr(audio_path,
 # Print the transcription
 #print("Transcription:", result["text"] )
 
+# Summarise the text obtained from mp3
 context = result["text"]
 
 summarize = pipeline("summarization", model="facebook/bart-large-cnn")
-
 summary = summarize(f"Summarize the following in 3 sentences:\n{context}")  
-
 print(summary)
 
