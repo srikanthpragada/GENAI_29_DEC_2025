@@ -17,10 +17,11 @@ splitter = RecursiveCharacterTextSplitter(
 chunks = splitter.split_documents(docs)
 print("No. of chunks :", len(chunks))
 
-# 3. Create vector db
+
 embeddings_model = HuggingFaceEmbeddings(
     model_name='sentence-transformers/all-MiniLM-L6-v2')
 
+# 3. Create vector db
 db = FAISS.from_documents(chunks, embeddings_model)
 
 # 4. Retrieve docs that are similar to query 
