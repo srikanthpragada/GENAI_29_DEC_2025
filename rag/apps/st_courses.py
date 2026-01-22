@@ -40,7 +40,7 @@ else:
 prompt_template = """:
 Consider the following context and give a short answer for the given question.
 Context : {context}
-Question:{question}
+Question: {question}
 """
 
 prompt  = PromptTemplate.from_template(prompt_template)
