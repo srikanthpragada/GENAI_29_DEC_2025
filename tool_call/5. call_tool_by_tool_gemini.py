@@ -33,6 +33,7 @@ gemini = init_chat_model(
 
 system_message = SystemMessage(
     "You are a helpful weather assistant.If needed, find out latitude and logitude then provide to tool. ")
+
 user_message = HumanMessage("What is the weather in Perth")
 #user_message = HumanMessage("What is the capital of Australia")
 

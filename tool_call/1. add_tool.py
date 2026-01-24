@@ -14,8 +14,8 @@ def add(a: int, b: int) -> int:
 tools = [add]
 llm_with_tools = llm.bind_tools(tools)
 
-#query = "What is 11 + 49?"
-query = "What is the capital of Australia?"
+query = "What is 11 + 49?"
+#query = "What is the capital of Australia?"
 
 messages = [
     SystemMessage(
