@@ -24,13 +24,14 @@ async def process():
         print(tool.name)
 
 
-    model = init_chat_model("gpt-4o-mini", model_provider="openai")
+    model = init_chat_model("gemini-2.5-flash", model_provider="google-genai")
+    #model = init_chat_model("gpt-4.1-nano", model_provider="openai")
     agent = create_agent(model, tools)
     prime_response = await agent.ainvoke({"messages": "is 383843 a prime number?"})
     print(prime_response["messages"][-1].content)
 
-    perfect_response = await agent.ainvoke({"messages": "is 28 a prefect number?"})
-    print(perfect_response["messages"][-1].content)
+    # perfect_response = await agent.ainvoke({"messages": "is 28 a prefect number?"})
+    # print(perfect_response["messages"][-1].content)
 
     file_response = await agent.ainvoke({"messages": "Get contents of test.txt file"})
     print(file_response["messages"][-1].content)

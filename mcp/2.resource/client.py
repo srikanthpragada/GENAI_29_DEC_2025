@@ -3,10 +3,10 @@ from fastmcp import Client
 
 client = Client("http://localhost:9999/mcp")
 
-async def greet(user : str):
+async def greet():
     async with client:
         # Call resource 
-        result = await client.read_resource(f"resource://greeting/{user}")
+        result = await client.read_resource(f"resource://greeting/Srikanth")
         print(result[0].text)
 
-asyncio.run(greet("Srikanth"))
+asyncio.run(greet())
